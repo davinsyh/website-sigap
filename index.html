@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAPI PPKPT — Pilih Akses</title>
+    <meta name="description" content="SIAPI PPKPT - Sistem Informasi Penanganan Kekerasan di Lingkungan Kampus">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        brand: { 50: '#eef9f8', 100: '#d5f1ee', 200: '#aee3df', 300: '#79cec7', 400: '#4bb5ac', 500: '#0C969C', 600: '#0a7a7f', 700: '#0b6267', 800: '#0d4f53', 900: '#0f4245' },
+                        navy: { 50: '#e8edf4', 100: '#c5d0e4', 200: '#9eafd0', 300: '#778ebb', 400: '#5a75ad', 500: '#0947aa', 600: '#132338', 700: '#0f1c2e', 800: '#0b1524', 900: '#070e1a' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #132338 0%, #0947aa 30%, #0C969C 60%, #0a7a7f 80%, #132338 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: floatOrb 20s ease-in-out infinite;
+        }
+        .orb-1 { width: 400px; height: 400px; background: #0C969C; top: -10%; left: -5%; animation-delay: 0s; }
+        .orb-2 { width: 350px; height: 350px; background: #0947aa; bottom: -15%; right: -5%; animation-delay: 5s; }
+        .orb-3 { width: 250px; height: 250px; background: #6BA3BE; top: 50%; left: 50%; animation-delay: 10s; }
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .role-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .role-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--accent-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .role-card:hover::before { transform: scaleX(1); }
+        .role-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4), 0 0 30px rgba(12, 150, 156, 0.15);
+        }
+
+        .card-admin { --accent-gradient: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .card-psikolog { --accent-gradient: linear-gradient(135deg, #0C969C, #0a7a7f); }
+        .card-legal { --accent-gradient: linear-gradient(135deg, #f59e0b, #d97706); }
+        .card-user { --accent-gradient: linear-gradient(135deg, #6BA3BE, #4b8a7b); }
+
+        .icon-ring {
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        .role-card:hover .icon-ring { transform: scale(1.1); }
+        .icon-ring::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.1);
+            animation: spinRing 8s linear infinite;
+            border-top-color: transparent;
+            border-right-color: transparent;
+        }
+        @keyframes spinRing { to { transform: rotate(360deg); } }
+
+        .admin-ring { background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); }
+        .psikolog-ring { background: linear-gradient(135deg, rgba(12,150,156,0.2), rgba(10,122,127,0.1)); }
+        .legal-ring { background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(217,119,6,0.1)); }
+        .user-ring { background: linear-gradient(135deg, rgba(107,163,190,0.2), rgba(75,138,123,0.1)); }
+
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            animation: particleFloat 15s linear infinite;
+        }
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+        }
+
+        .brand-glow {
+            text-shadow: 0 0 40px rgba(12, 150, 156, 0.3), 0 0 80px rgba(9, 71, 170, 0.2);
+        }
+
+        .enter-btn {
+            display: inline-flex;
+            align-items: center; gap: 8px;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08);
+            color: white;
+            text-decoration: none;
+        }
+        .enter-btn:hover {
+            background: rgba(255,255,255,0.18);
+            border-color: rgba(255,255,255,0.3);
+            transform: translateX(4px);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in { animation: fadeInUp 0.8s ease backwards; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+
+<body class="gradient-bg min-h-[100dvh] flex flex-col items-center justify-start md:justify-center relative overflow-x-hidden px-4 py-12 md:py-8">
+
+    <!-- Floating Orbs -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <div class="text-center mb-12 relative z-10 animate-in">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white brand-glow tracking-tight mb-4">
+            SIAPI PPKPT
+        </h1>
+        <p class="text-white/60 text-lg md:text-xl font-light max-w-xl mx-auto leading-relaxed">
+            Satuan Tugas Pencegahan dan Penanganan<br class="hidden sm:block">
+            Kekerasan di Perguruan Tinggi
+        </p>
+        <div class="mt-4 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 text-white/70 text-sm border border-white/10">
+            <i class="fas fa-university"></i>
+            <span>Telkom University Surabaya</span>
+        </div>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="text-white/50 text-sm font-medium uppercase tracking-[0.2em] mb-8 relative z-10 animate-in delay-1">
+        Pilih Akses Dashboard
+    </p>
+
+    <!-- Role Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl w-full relative z-10">
+
+        <!-- Admin Card -->
+        <a href="Admin/pages/cases/cases.html" class="role-card card-admin rounded-2xl p-8 cursor-pointer block animate-in delay-2">
+            <div class="flex flex-col items-center text-center">
+                <div class="icon-ring admin-ring mb-6">
+                    <i class="fas fa-user-shield text-3xl text-blue-400"></i>
+                </div>
+                <h3 class="text-white text-xl font-bold mb-2">Administrator</h3>
+                <p class="text-white/50 text-sm leading-relaxed mb-6">
+                    Kelola data kasus, jadwal konsultasi, statistik, dan konten blog.
+                </p>
+                <div class="flex flex-wrap gap-2 justify-center mb-6">
+                    <span class="text-xs bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full border border-blue-500/20">Data Kasus</span>
+                    <span class="text-xs bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full border border-blue-500/20">Statistik</span>
+                    <span class="text-xs bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full border border-blue-500/20">Blog</span>
+                </div>
+                <span class="enter-btn">
+                    Masuk <i class="fas fa-arrow-right text-xs"></i>
+                </span>
+            </div>
+        </a>
+
+        <!-- Psikolog Card -->
+        <a href="Psikolog/pages/dashboard.html" class="role-card card-psikolog rounded-2xl p-8 cursor-pointer block animate-in delay-3">
+            <div class="flex flex-col items-center text-center">
+                <div class="icon-ring psikolog-ring mb-6">
+                    <i class="fas fa-user-md text-3xl text-teal-400"></i>
+                </div>
+                <h3 class="text-white text-xl font-bold mb-2">Psikolog</h3>
+                <p class="text-white/50 text-sm leading-relaxed mb-6">
+                    Dashboard kasus, input catatan konsultasi, dan manajemen jadwal.
+                </p>
+                <div class="flex flex-wrap gap-2 justify-center mb-6">
+                    <span class="text-xs bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full border border-teal-500/20">Kasus Saya</span>
+                    <span class="text-xs bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full border border-teal-500/20">Catatan</span>
+                    <span class="text-xs bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full border border-teal-500/20">Jadwal</span>
+                </div>
+                <span class="enter-btn">
+                    Masuk <i class="fas fa-arrow-right text-xs"></i>
+                </span>
+            </div>
+        </a>
+
+        <!-- Legal Support Card -->
+        <a href="Legal/pages/dashboard.html" class="role-card card-legal rounded-2xl p-8 cursor-pointer block animate-in delay-3">
+            <div class="flex flex-col items-center text-center">
+                <div class="icon-ring legal-ring mb-6">
+                    <i class="fas fa-gavel text-3xl text-amber-400"></i>
+                </div>
+                <h3 class="text-white text-xl font-bold mb-2">Pendamping Hukum</h3>
+                <p class="text-white/50 text-sm leading-relaxed mb-6">
+                    Akses read-only laporan, audit trail blockchain, dan catatan hukum.
+                </p>
+                <div class="flex flex-wrap gap-2 justify-center mb-6">
+                    <span class="text-xs bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full border border-amber-500/20">Read-Only</span>
+                    <span class="text-xs bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full border border-amber-500/20">Audit Trail</span>
+                    <span class="text-xs bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full border border-amber-500/20">Analisis</span>
+                </div>
+                <span class="enter-btn">
+                    Masuk <i class="fas fa-arrow-right text-xs"></i>
+                </span>
+            </div>
+        </a>
+
+        <!-- User Card -->
+        <a href="pengguna.html" class="role-card card-user rounded-2xl p-8 cursor-pointer block animate-in delay-4">
+            <div class="flex flex-col items-center text-center">
+                <div class="icon-ring user-ring mb-6">
+                    <i class="fas fa-users text-3xl text-sky-300"></i>
+                </div>
+                <h3 class="text-white text-xl font-bold mb-2">Pengguna</h3>
+                <p class="text-white/50 text-sm leading-relaxed mb-6">
+                    Akses landing page, buat laporan, monitoring progress, dan wawasan.
+                </p>
+                <div class="flex flex-wrap gap-2 justify-center mb-6">
+                    <span class="text-xs bg-sky-500/20 text-sky-300 px-3 py-1 rounded-full border border-sky-500/20">Lapor</span>
+                    <span class="text-xs bg-sky-500/20 text-sky-300 px-3 py-1 rounded-full border border-sky-500/20">Monitoring</span>
+                    <span class="text-xs bg-sky-500/20 text-sky-300 px-3 py-1 rounded-full border border-sky-500/20">Wawasan</span>
+                </div>
+                <span class="enter-btn">
+                    Masuk <i class="fas fa-arrow-right text-xs"></i>
+                </span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-12 text-center text-white/30 text-xs relative z-10 animate-in delay-4">
+        <p>© 2026 Telkom University Surabaya — Demo Front-End Only</p>
+    </div>
+
+    <!-- Particle Generator -->
+    <script>
+        (function() {
+            const container = document.getElementById('particles');
+            for(let i = 0; i < 30; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (10 + Math.random() * 20) + 's';
+                p.style.animationDelay = Math.random() * 15 + 's';
+                p.style.width = p.style.height = (2 + Math.random() * 3) + 'px';
+                container.appendChild(p);
+            }
+        })();
+    </script>
+</body>
+
+</html>
