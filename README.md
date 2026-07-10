@@ -35,7 +35,7 @@ Year: 2024-2025
 
 ---
 
-## ?? Daftar Isi
+## 📋 Daftar Isi
 
 <details open>
 <summary><b>Klik untuk membuka/tutup</b></summary>
@@ -53,14 +53,14 @@ Year: 2024-2025
 
 ---
 
-## ?? Tentang Proyek
+## 📖 Tentang Proyek
 
 <div align="center">
 <table>
 <tr>
 <td width="50%">
 
-### ??? Apa itu SIAPI PPKPT?
+### ❓ Apa itu SIAPI PPKPT?
 
 **SIAPI PPKPT** (Satuan Tugas Pencegahan dan Penanganan Kekerasan di Perguruan Tinggi) adalah platform digital inovatif yang dikembangkan oleh **Davin Syah Putra Antoro** bersama tim mahasiswa **Telkom University Surabaya**.
 
@@ -69,14 +69,14 @@ Platform ini menyediakan ruang aman bagi korban dan saksi kekerasan seksual untu
 </td>
 <td width="50%">
 
-### ?? Tujuan & Inovasi
+### 🎯 Tujuan & Inovasi
 
-- ?? **Keamanan End-to-End** - Data terenkripsi AES-256
-- ?? **Aksesibilitas Universal** - Voice input & Text-to-Speech
-- ?? **Transparansi Real-time** - Monitoring progress laporan
-- ?? **AI Chatbot TemanKu** - Pendampingan empatik 24/7
-- ?? **Edukasi PPKS** - Blog & artikel informatif
-- ?? **Emergency Detection** - AI deteksi kondisi darurat
+- 🔒 **Keamanan End-to-End** - Data terenkripsi AES-256
+- ♿ **Aksesibilitas Universal** - Voice input & Text-to-Speech
+- 📊 **Transparansi Real-time** - Monitoring progress laporan
+- 🤖 **AI Chatbot TemanKu** - Pendampingan empatik 24/7
+- 📚 **Edukasi PPKS** - Blog & artikel informatif
+- 🚨 **Emergency Detection** - AI deteksi kondisi darurat
 
 **Highlight:** Platform pertama di Indonesia yang menggunakan AI Chatbot dengan *Cumulative Intent Scoring* untuk mendeteksi kasus pelecehan secara gradual.
 
@@ -87,30 +87,30 @@ Platform ini menyediakan ruang aman bagi korban dan saksi kekerasan seksual untu
 
 ---
 
-## ? Fitur Unggulan
+## ✨ Fitur Unggulan
 
 <div align="center">
 
 | Fitur | Deskripsi | Inovasi |
 |:---:|:---|:---:|
-| ?? **Form Pelaporan 7 Langkah** | Form terstruktur dengan validasi & enkripsi data | AES-256 Encryption |
-| ?? **TemanKu AI Chatbot** | Chatbot AI empatik untuk curhat & konsultasi | Groq LLM + Custom Prompt |
-| ?? **Voice Input** | Rekam kronologi dengan suara, transkripsi otomatis | Web Speech API |
-| ?? **Real-time Monitoring** | Lacak progress penanganan dengan ID unik | Encrypted Session |
-| ?? **Text-to-Speech** | Aksesibilitas untuk tunanetra | Responsive Voice |
-| ?? **Blog Kabar SIAPI** | Artikel edukasi seputar PPKS | SEO Optimized |
-| ?? **End-to-End Encryption** | Semua data terenkripsi dengan CryptoJS | AES-256-GCM |
-| ?? **Responsive Design** | Optimal di semua perangkat | Mobile-First CSS |
-| ?? **Modern UI/UX** | Glassmorphism, animasi halus | Premium Design |
-| ??? **Admin Dashboard** | Panel admin untuk kelola laporan & blog | Role-Based Access |
-| ?? **Emergency Detection** | AI deteksi kondisi darurat otomatis | NLP Pattern Matching |
-| ?? **Statistik Publik** | Transparansi data penanganan kasus | Real-time Aggregation |
+| 📝 **Form Pelaporan 7 Langkah** | Form terstruktur dengan validasi & enkripsi data | AES-256 Encryption |
+| 🤖 **TemanKu AI Chatbot** | Chatbot AI empatik untuk curhat & konsultasi | Groq LLM + Custom Prompt |
+| 🎤 **Voice Input** | Rekam kronologi dengan suara, transkripsi otomatis | Web Speech API |
+| ⏱️ **Real-time Monitoring** | Lacak progress penanganan dengan ID unik | Encrypted Session |
+| 🔊 **Text-to-Speech** | Aksesibilitas untuk tunanetra | Responsive Voice |
+| 📰 **Blog Kabar SIAPI** | Artikel edukasi seputar PPKS | SEO Optimized |
+| 🔐 **End-to-End Encryption** | Semua data terenkripsi dengan CryptoJS | AES-256-GCM |
+| 📱 **Responsive Design** | Optimal di semua perangkat | Mobile-First CSS |
+| 🎨 **Modern UI/UX** | Glassmorphism, animasi halus | Premium Design |
+| 👨‍💻 **Admin Dashboard** | Panel admin untuk kelola laporan & blog | Role-Based Access |
+| 🚨 **Emergency Detection** | AI deteksi kondisi darurat otomatis | NLP Pattern Matching |
+| 📈 **Statistik Publik** | Transparansi data penanganan kasus | Real-time Aggregation |
 
 </div>
 
 ---
 
-## ?? TemanKu AI Chatbot
+## 🤖 TemanKu AI Chatbot
 
 <div align="center">
 
@@ -120,7 +120,7 @@ Platform ini menyediakan ruang aman bagi korban dan saksi kekerasan seksual untu
 
 TemanKu adalah chatbot AI inovatif dengan pendekatan unik:
 
-### ?? Arsitektur Cerdas
+### 🧠 Arsitektur Cerdas
 
 ```
 +-------------------------------------------------------------+
@@ -144,7 +144,7 @@ TemanKu adalah chatbot AI inovatif dengan pendekatan unik:
 +-------------------------------------------------------------+
 ```
 
-### ?? Fitur Unik TemanKu
+### 🌟 Fitur Unik TemanKu
 
 | Fitur | Penjelasan |
 |:------|:-----------|
@@ -156,7 +156,7 @@ TemanKu adalah chatbot AI inovatif dengan pendekatan unik:
 | **Emergency Escalation** | Deteksi otomatis kata kunci darurat (bunuh diri, dll) |
 | **Dual API Failover** | Redundansi dengan 2 API key untuk ketersediaan tinggi |
 
-### ?? Sample Conversation Flow
+### 💬 Sample Conversation Flow
 
 ```
 User: "halo"
@@ -174,7 +174,7 @@ Bot: "Makasih udah mau cerita. Mau aku bantu bikin laporan?" + [Tombol Ya/Tidak]
 
 ---
 
-## ??? Tech Stack
+## 💻 Tech Stack
 
 <div align="center">
 
@@ -209,16 +209,16 @@ Bot: "Makasih udah mau cerita. Mau aku bantu bikin laporan?" + [Tombol Ya/Tidak]
 
 ---
 
-##  Instalasi
+## 🚀 Instalasi
 
 <details>
-<summary><b>?? Prasyarat</b></summary>
+<summary><b>📝 Prasyarat</b></summary>
 
-- ? PHP 8.0 atau lebih tinggi
-- ? MySQL 5.7+ / MariaDB
-- ? XAMPP / WAMP / LAMP
-- ? Groq API Key
-- ? Web Browser Modern
+- 🐘 PHP 8.0 atau lebih tinggi
+- 🐬 MySQL 5.7+ / MariaDB
+- 📦 XAMPP / WAMP / LAMP
+- 🔑 Groq API Key
+- 🌐 Web Browser Modern
 
 </details>
 
@@ -246,7 +246,7 @@ mysql -u root -p < database/siapi_ppkpt.sql
 
 ---
 
-## ????? Dosen Pembimbing
+## 👨‍🏫 Dosen Pembimbing
 
 <div align="center">
 
@@ -254,7 +254,7 @@ mysql -u root -p < database/siapi_ppkpt.sql
 <tr>
 <td align="center" width="50%">
 
-### ????? Dosen Pemrograman Web
+### 👩‍🏫 Dosen Pemrograman Web
 
 <img src="https://ui-avatars.com/api/?name=Mastuty+Ayu&background=15928c&color=fff&size=150&rounded=true&bold=true" width="100"/>
 
@@ -269,7 +269,7 @@ mysql -u root -p < database/siapi_ppkpt.sql
 </td>
 <td align="center" width="50%">
 
-### ????? Dosen Proyek TI
+### 👨‍🏫 Dosen Proyek TI
 
 <img src="https://ui-avatars.com/api/?name=Mustafa+Kamal&background=0947aa&color=fff&size=150&rounded=true&bold=true" width="100"/>
 
@@ -289,7 +289,7 @@ mysql -u root -p < database/siapi_ppkpt.sql
 
 
 
-### ?? Related Links
+### 🔗 Related Links
 
 - [Telkom University Surabaya](https://surabaya.telkomuniversity.ac.id)
 - [Satgas PPKPT Telkom University](https://ppkpt.telkomuniversity.ac.id)
@@ -298,7 +298,7 @@ mysql -u root -p < database/siapi_ppkpt.sql
 
 ---
 
-## ?? Lisensi
+## 📄 Lisensi
 
 <div align="center">
 
@@ -325,7 +325,7 @@ copies or substantial portions of the Software.
 
 ---
 
-## ?? Citation
+## 📖 Citation
 
 Jika proyek ini membantu penelitian atau referensi Anda:
 
@@ -343,18 +343,18 @@ Jika proyek ini membantu penelitian atau referensi Anda:
 
 <div align="center">
 
-### ?? Dibuat dengan Cinta untuk Kemanusiaan
+### ❤️ Dibuat dengan Cinta untuk Kemanusiaan
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0947aa,50:15928c,100:6BA3BE&height=100&section=footer" width="100%"/>
 
 **[Davin Syah Putra Antoro](https://github.com/davinsyh)** & Tim  
 Telkom University Surabaya | 2024-2025
 
-**? Jangan lupa beri bintang jika proyek ini bermanfaat!**
+**⭐ Jangan lupa beri bintang jika proyek ini bermanfaat!**
 
 <p>
 <a href="#-daftar-isi">
-<img src="https://img.shields.io/badge/??_Kembali_ke_Atas-15928c?style=for-the-badge" alt="Back to Top"/>
+<img src="https://img.shields.io/badge/⬆️_Kembali_ke_Atas-15928c?style=for-the-badge" alt="Back to Top"/>
 </a>
 </p>
 
